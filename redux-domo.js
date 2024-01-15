@@ -9,10 +9,18 @@ const counterReducer = (state = { counter: 0 }, action) => {
       return {
         counter: state.counter + 1,
       };
-    case "decrement":
+    case "INCREMENTBY2":
       return {
-        counter: state.counter - 1,
+        counter: state.counter + 2,
       };
+      case "decrement":
+        return {
+          counter: state.counter - 1,
+        };
+        case "DECREMENTBY2":
+          return {
+            counter: state.counter - 2,
+          };
     default: {
       return state;
     }
@@ -34,3 +42,7 @@ store.dispatch({ type: "increment" });
 
 store.dispatch({ type: "decrement" });
 store.dispatch({ type: "decrement" });
+store.dispatch({ type: "INCREMENTBY2" });
+store.dispatch({ type: "INCREMENTBY2" });
+store.dispatch({ type: "DECREMENTBY2" });
+store.dispatch({ type: "DECREMENTBY2" });
