@@ -1,0 +1,50 @@
+											Video Notes:
+
+What is Redux: A state management system for cross component or app-wide state
+
+what is cross-component/app-wide state:
+
+Local state,cross-component state , app-wide state
+
+Local  state: state that belongs to a single component Ex: listening to user input in a input field ex toggling a 'show more' details field . Should be managed by component-internal with useState()/ useReducer()
+Cross component state : state that affects multiple components ex open/closed state of a modal overlay . same we can manage with useState and useReducer and it requires 'props chains'/ 'prop drilling' wherewe passprops across multiple component where we also might pass function as props across multiple component so that these different components can work together and manage state together . and that's not bad or anything like it just little bit complex than local state
+App-wide State : and sometimes we also have state that does not just affect multiple component  but basically all components of an application now when that happen we can call this app-wide state i.e state that affects the entire app (most /all components ) Ex user authentication status. Requires 'props chains'/'prop drilling' 
+
+
+for cross component and appwide state passing around data and updating function through props can become complex that's why we use react context . react context is built in feature in react that  makes managing cross component or application wise state easier so that's one way of simplfy cross component and app wide state management 
+
+redux same the same problem  manage cross component state and app-wide
+
+why do we need redux if i have context: 
+
+React context have couple of potential disadvantage : and i say potential because it might not matter in the app u r building and if they don't matter u don't need redux it is as simple as that 
+
+=>  u can use context and redux in same application 
+
+Disadvantage of context: 
+
+Complex setup/Management: state with react context can become quite complex and that depend on typeof apk u r building for small and medium size apk that not b a problem but if u r building a large application and enterprize level apk where lot of component and lot of things going on than when using react context u have problem . u might end of with the large context that cares about authentication ,theming , user input ,modal should be displayed or not and bla bla .so this is one potential disadvantage and another is 
+Performance: React context is not optimized for high - frequency state changes
+
+
+Redux is flux like state management
+
+
+
+How Redux work 
+
+
+
+central Data (state store)  -> components
+
+component never directly manipulate the data in store  we use the concept call reducer 
+
+reducer change the data
+
+components dispatch action . components triger some action (js fun)
+
+
+
+npm init -y gives package.json file if u don't write -y u have to manually give pacakge name and other stuff . npm init gives package.json
+
+________________________________________________________________________________________
